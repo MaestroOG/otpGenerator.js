@@ -3,15 +3,15 @@ const otpDisplay = document.getElementById("otp");
 const copyBtn = document.querySelectorAll(".buttons button")[1];
 const alert = document.querySelector("p");
 const numbers = "0123456789";
+const length = 4;
 
 // console.log(otp.innerHTML.length);
 
 function generateOtp() {
     let otp = "";
-    otp = otp + Math.floor(Math.random() * numbers.length);
-    otp = otp + Math.floor(Math.random() * numbers.length);
-    otp = otp + Math.floor(Math.random() * numbers.length);
-    otp = otp + Math.floor(Math.random() * numbers.length);
+    while (length > otp.length) {
+        otp += numbers[Math.floor(Math.random() * numbers.length)]
+    }
 
     otpDisplay.innerHTML = otp;
 
